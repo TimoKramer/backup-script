@@ -1,0 +1,17 @@
+#!/bin/bash
+
+USER="foobar"
+EMAIL="foo@bar.de"
+GPG_KEY_ID="0xFOOBAR42"
+SSH_KEY="/home/foobar/.ssh/backup"
+
+NOW=$(date +%Y%m%d%H%M)
+
+# local backup cache
+BACKUP_CACHE="/home/${USER}/backup/cache"
+CURRENT_LINK="${BACKUP_CACHE}/current"
+SNAPSHOT_DIR="${BACKUP_CACHE}/snapshots"
+ARCHIVES_DIR="${BACKUP_CACHE}/archives"
+
+LOCAL_SOURCE="/home/${USER}/Documents/"
+REMOTE_DESTINATION="foobar@bar.de:~/backup/"
