@@ -26,7 +26,7 @@ tar -czf ${ARCHIVES_DIR}/${NOW}.tar.gz ${SNAPSHOT_DIR}/*
 
 # encrypt the archive
 # key-id with gpg --list-keys --keyid-format SHORT
-gpg --symmetric --quiet --recipient ${EMAIL} --local-user ${GPG_KEY_ID} ${ARCHIVES_DIR}/${NOW}.tar.gz \
+gpg --encrypt --symmetric --quiet --recipient ${EMAIL} --local-user ${GPG_KEY_ID} ${ARCHIVES_DIR}/${NOW}.tar.gz \
   && rm -rf ${ARCHIVES_DIR}/${NOW}.tar.gz
 
 if [ $(ls -d ${ARCHIVES_DIR}/*.tar.gz 2> /dev/null | wc -l) == "0" ]
